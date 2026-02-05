@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@tanstack/react-router'
 
 export function Hero() {
   return (
@@ -10,28 +10,28 @@ export function Hero() {
 
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
           A production-ready monorepo template for building cross-platform applications
-          with shared components between React Native and Next.js.
+          with shared components between React Native and Vite.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
+          <a
             href="https://github.com/gurselcakar/universal-react-monorepo"
             target="_blank"
             rel="noopener"
             className="px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors"
           >
             Star on GitHub
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://gurselcakar.com/monorepo"
             target="_blank"
             rel="noopener"
             className="px-6 py-3 border border-gray-300 text-gray-700 text-sm font-medium rounded-md hover:border-gray-400 hover:text-gray-900 transition-colors"
           >
             Read the Blog Post
-          </Link>
+          </a>
           <Link
-            href="/nativewind"
+            to="/nativewind"
             className="px-6 py-3 text-gray-500 text-sm font-medium hover:text-gray-900 transition-colors"
           >
             View Components

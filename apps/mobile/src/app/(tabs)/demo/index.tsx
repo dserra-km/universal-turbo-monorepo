@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Text, View, Alert, ScrollView } from "react-native";
-import { Button, Card, Text as UIText, Badge, Input } from "ui";
+import { Button, Card, Text as UIText, Badge, Input } from "@repo/ui";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "../../../components";
 
@@ -51,8 +51,8 @@ export default function Demo() {
         <ComponentSection title="Button" importStatement="from 'ui'">
           <View className="flex-row gap-3 flex-wrap">
             <Button title="Primary" onPress={() => Alert.alert('Pressed', 'Primary button')} />
-            <Button title="Secondary" variant="secondary" onPress={() => {}} />
-            <Button title="Outline" variant="outline" onPress={() => {}} />
+            <Button title="Secondary" variant="secondary" onPress={() => { }} />
+            <Button title="Outline" variant="outline" onPress={() => { }} />
           </View>
         </ComponentSection>
 

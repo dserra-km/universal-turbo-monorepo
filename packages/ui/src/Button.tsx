@@ -9,7 +9,7 @@ const buttonVariants = tv({
   variants: {
     variant: {
       primary: {
-        button: 'bg-gray-900',
+        button: 'bg-primary',
         text: 'text-white',
       },
       secondary: {

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const technologies = [
   {
     name: 'Turborepo',
@@ -7,19 +5,19 @@ const technologies = [
     logo: '/turborepo-dark.svg',
   },
   {
-    name: 'Next.js 16',
-    description: 'React framework with App Router for the web',
-    logo: '/next.svg',
-  },
-  {
-    name: 'Expo SDK 54',
-    description: 'React Native framework with Expo Router',
-    logo: '/expo-wordmark.png',
+    name: 'Vite',
+    description: 'Lightning-fast development with HMR',
+    logo: '/vite.svg',
   },
   {
     name: 'NativeWind',
     description: 'Tailwind CSS for React Native',
     logo: '/nativewind-logo.jpeg',
+  },
+  {
+    name: 'TanStack Router',
+    description: 'Type-safe file-based routing for React',
+    logo: '/tanstack.png',
   },
 ]
 
@@ -35,7 +33,7 @@ export function TechStack() {
           {technologies.map((tech) => (
             <div key={tech.name} className="flex items-center gap-4">
               <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center">
-                <Image
+                <img
                   src={tech.logo}
                   alt={`${tech.name} logo`}
                   width={64}
