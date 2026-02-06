@@ -1,5 +1,5 @@
 diff --git a/src/loadConfig.js b/src/loadConfig.js
-index 7ac9d88404063ce86d8c15a91ce72c439b455075..b78d273fed9df420f193db70c0680cf44635b462 100644
+index 7ac9d88404063ce86d8c15a91ce72c439b455075..9dbc085dac303868a7f0e6ecd27356daee55c0b9 100644
 --- a/src/loadConfig.js
 +++ b/src/loadConfig.js
 @@ -15,6 +15,7 @@ var MetroCache = _interopRequireWildcard(require("metro-cache"));
@@ -10,11 +10,19 @@ index 7ac9d88404063ce86d8c15a91ce72c439b455075..b78d273fed9df420f193db70c0680cf4
  function _getRequireWildcardCache(e) {
    if ("function" != typeof WeakMap) return null;
    var r = new WeakMap(),
-@@ -289,6 +290,7 @@ async function loadConfigFile(absolutePath) {
+@@ -289,10 +290,13 @@ async function loadConfigFile(absolutePath) {
        }
      } catch (e) {
        try {
-+        const importPath = process.platform === 'win32' ? (0, _url.pathToFileURL)(absolutePath).href : absolutePath;
-         const configModule = await import(absolutePath);
+-        const configModule = await import(absolutePath);
++        const pathToImport = path.isAbsolute(absolutePath) && process.platform === 'win32'
++          ? (0, _url.pathToFileURL)(absolutePath).href
++          : absolutePath;
++        const configModule = await import(pathToImport);
          config = await configModule.default;
        } catch (error) {
+-        let prefix = `Error loading Metro config at: ${absolutePath}\n`;
++        let prefix = `Error loading Metro config at: ${absolutePath} ${path.isAbsolute(absolutePath)} ${process.plat} \n`;
+         if (
+           error.code === "ERR_UNKNOWN_FILE_EXTENSION" &&
+           TS_EXTENSIONS.has(extension)

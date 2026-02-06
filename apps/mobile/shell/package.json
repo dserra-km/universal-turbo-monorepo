@@ -1,6 +1,6 @@
 {
   "name": "@repo/mobile-shell",
-  "main": "expo-router/entry",
+  "main": "index.js",
   "version": "1.0.0",
   "scripts": {
     "dev": "expo start",
@@ -42,7 +42,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@module-federation/metro": "^0.24.1",
+    "@module-federation/metro": "workspace:*",
+    "@react-native/metro-config": "^0.83.1",
     "@types/react": "~19.1.13",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~10.0.0",
