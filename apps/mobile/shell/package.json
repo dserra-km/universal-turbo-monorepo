@@ -1,5 +1,5 @@
 {
-  "name": "mobile",
+  "name": "@repo/mobile-shell",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@module-federation/metro": "^0.24.1",
     "@types/react": "~19.1.13",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~10.0.0",

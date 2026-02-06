@@ -28,6 +28,11 @@
       "esbuild",
       "sharp",
       "unrs-resolver"
-    ]
+    ],
+    "patchedDependencies": {
+      "metro-config": "patches/metro-config.patch",
+      "nativewind": "patches/nativewind.patch",
+      "@module-federation/metro": "patches/@module-federation__metro.patch"
+    }
   }
 }
