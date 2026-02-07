@@ -1,9 +1,9 @@
 {
-  "name": "@repo/mobile-shell",
+  "name": "accounts",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "DEBUG=nativewind rock start",
+    "dev": "rock start --port 8082",
     "lint": "eslint .",
     "test": "jest",
     "ios": "rock run:ios",
@@ -13,7 +13,6 @@
     "@babel/runtime": "^7.25.0",
     "@module-federation/metro": "^2.0.0",
     "@module-federation/metro-plugin-rnef": "^2.0.0",
-    "@module-federation/runtime": "^2.0.0",
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "nativewind": "^4.1.23",

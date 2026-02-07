@@ -20,25 +20,28 @@ const config = {
 const nativeConfig = withNativeWind(mergeConfig(getDefaultConfig(__dirname), config), { input: "./global.css" });
 
 module.exports = withModuleFederation(nativeConfig, {
-  name: 'Shell',
-  remotes: {
-    Accounts: 'Accounts@http://localhost:8082/mf-manifest.json',
+  name: 'Accounts',
+  filename: 'accounts.bundle',
+  exposes: {
+    './App': 'App.tsx',
   },
   shared: {
     react: {
       singleton: true,
-      eager: true,
+      eager: false,
       requiredVersion: '19.2.0',
       version: '19.2.0',
+      import: false,
     },
     'react-native': {
       singleton: true,
-      eager: true,
+      eager: false,
       requiredVersion: '0.83.0',
       version: '0.83.0',
+      import: false,
     },
   },
-  shareStrategy: 'loaded-first'
+  shareStrategy: 'version-first'
 },
   {
     flags: {

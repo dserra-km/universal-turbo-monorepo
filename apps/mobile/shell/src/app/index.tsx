@@ -1,5 +1,8 @@
 import { Button } from '@repo/ui';
+import React from 'react';
 import { Text, View } from 'react-native';
+
+const Accounts = React.lazy(() => import('Accounts/App'));
 
 export default function Index() {
   return (
@@ -12,7 +15,7 @@ export default function Index() {
           This is styled with Tailwind CSS
         </Text>
       </View>
-      
+      <React.Suspense fallback={<Text>Loading Accounts...</Text>}><Accounts /></React.Suspense>
       <View className="flex-row gap-2 mt-4">
         <Button title="Button 1" onPress={() => console.log('Button 1 Pressed')} />
         <View className="bg-success rounded-full px-4 py-2">
