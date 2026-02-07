@@ -14,6 +14,7 @@ const config = {
   watchFolders: [
     path.resolve(__dirname, '../../../node_modules'),
     path.resolve(__dirname, '../../../packages'),
+    path.resolve(__dirname, '../accounts'),
   ],
 };
 
@@ -36,6 +37,24 @@ module.exports = withModuleFederation(nativeConfig, {
       eager: true,
       requiredVersion: '0.83.0',
       version: '0.83.0',
+    },
+    'nativewind': {
+      singleton: true,
+      eager: true,
+      requiredVersion: '^4.1.23',
+      version: '4.1.23',
+    },
+    'react-native-reanimated': {
+      singleton: true,
+      eager: true,
+      requiredVersion: '4.2.1',
+      version: '4.2.1',
+    },
+    'react-native-safe-area-context': {
+      singleton: true,
+      eager: true,
+      requiredVersion: '5.6.1',
+      version: '5.6.1',
     },
   },
   shareStrategy: 'loaded-first'
