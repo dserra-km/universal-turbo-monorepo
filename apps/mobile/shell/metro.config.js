@@ -1,9 +1,6 @@
-const path = require("node:path");
-const { withNativeWind } = require("nativewind/metro");
-const { getDefaultConfig } = require("expo/metro-config");
-const { mergeConfig } = require("@react-native/metro-config");
-
-const { withModuleFederation } = require("@module-federation/metro");
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const { withNativeWind } = require('nativewind/metro');
+const path = require('path');
 
 /**
  * Metro configuration
@@ -11,47 +8,12 @@ const { withModuleFederation } = require("@module-federation/metro");
  *
  * @type {import('@react-native/metro-config').MetroConfig}
  */
-
 const config = {
   resolver: { useWatchman: false },
   watchFolders: [
-    path.resolve(__dirname, "../../../node_modules"),
-    path.resolve(__dirname, "../../../packages"),
-  ],
+    path.resolve(__dirname, '../../../node_modules'),
+    path.resolve(__dirname, '../../../packages'),
+  ], 
 };
 
-const nativeWindConfig = withNativeWind(getDefaultConfig(__dirname), {
-  input: "./global.css",
-});
-
-module.exports = withModuleFederation(
-  mergeConfig(nativeWindConfig, config),
-  {
-    name: "shell",
-    remotes: {
-      accounts: "accounts@http://localhost:8082/mf-manifest.json",
-    },
-    shared: {
-      react: {
-        singleton: true,
-        eager: true,
-        requiredVersion: "19.1.0",
-        version: "19.1.0",
-      },
-      "react-native": {
-        singleton: true,
-        eager: true,
-        requiredVersion: "0.81.5",
-        version: "0.81.5",
-      },
-    },
-    shareStrategy: "loaded-first",
-  },
-  {
-    flags: {
-      unstable_patchHMRClient: true,
-      unstable_patchInitializeCore: true,
-      unstable_patchRuntimeRequire: true,
-    },
-  },
-);
+module.exports = withNativeWind(mergeConfig(getDefaultConfig(__dirname), config), { input: "./global.css" });

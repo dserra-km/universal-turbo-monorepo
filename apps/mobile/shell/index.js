@@ -1,12 +1,9 @@
-import { withAsyncStartup } from '@module-federation/metro/bootstrap';
-import { registerRootComponent } from 'expo';
+/**
+ * @format
+ */
 
-// create async boundry through withAsyncStartup helper
-// and pass the getter function for the app component
-// optionally a getter function for the fallback component
-registerRootComponent(
-  withAsyncStartup(
-    () => require('expo-router/entry'),
-    () => require('./src/components/Header'),
-  )(),
-);
+import { AppRegistry } from 'react-native';
+import './global.css';
+import Index from './src/app';
+
+AppRegistry.registerComponent('Shell', () => Index);

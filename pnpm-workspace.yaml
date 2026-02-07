@@ -5,3 +5,8 @@ packages:
 onlyBuiltDependencies:
   - sharp
   - unrs-resolver
+
+publicHoistPattern:
+  - '@babel/runtime'
+  - '@react-native/gradle-plugin'
+  - '@react-native/codegen'
