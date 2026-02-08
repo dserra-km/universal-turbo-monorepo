@@ -1,8 +1,11 @@
 import { Button } from '@repo/ui';
 import React from 'react';
 import { Text, View } from 'react-native';
+import type { RootStackScreenProps } from '../navigation';
 
-export default function Index() {
+type Props = RootStackScreenProps<'index'>;
+
+export default function Index({ navigation }: Props) {
   return (
     <View className="flex-1 bg-blue-500 items-center justify-center p-4">
       <View className="bg-white rounded-lg p-6 mb-4 shadow-lg">

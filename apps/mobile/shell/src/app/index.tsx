@@ -1,10 +1,13 @@
 import { Button } from '@repo/ui';
 import React from 'react';
 import { Text, View } from 'react-native';
+import type { RootStackScreenProps } from '../navigation';
 
 const Accounts = React.lazy(() => import('Accounts/App'));
 
-export default function Index() {
+type Props = RootStackScreenProps<'index'>;
+
+export default function Index({ navigation }: Props) {
   return (
     <View className="flex-1 bg-green-500 items-center justify-center p-4">
       <View className="bg-white rounded-lg p-6 mb-4 shadow-lg">
