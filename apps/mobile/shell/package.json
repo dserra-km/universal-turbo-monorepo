@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "test": "jest",
     "ios": "rock run:ios",
-    "android": "rock run:android"
+    "android": "rock run:android",
+    "adbreverse": "pnpm --filter @repo/mobile-accounts run adbreverse"
   },
   "dependencies": {
     "@repo/tailwind-config": "workspace:*",

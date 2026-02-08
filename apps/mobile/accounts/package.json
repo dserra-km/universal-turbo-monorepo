@@ -1,5 +1,5 @@
 {
-  "name": "accounts",
+  "name": "@repo/mobile-accounts",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,10 @@
     "lint": "eslint .",
     "test": "jest",
     "ios": "rock run:ios",
-    "android": "rock run:android"
+    "android": "rock run:android",
+    "adbreverse": "adb reverse tcp:8082 tcp:8082"
   },
-    "dependencies": {
+  "dependencies": {
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "nativewind": "^4.1.23",
