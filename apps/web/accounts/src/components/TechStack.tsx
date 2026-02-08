@@ -21,7 +21,7 @@ const technologies = [
   },
 ]
 
-export function TechStack() {
+export default function TechStack() {
   return (
     <section className="py-12 px-6 border-t border-gray-100">
       <div className="max-w-3xl mx-auto">

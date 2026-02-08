@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@repo/web-shell",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -11,16 +11,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/ui": "workspace:*",
     "@tanstack/react-router": "^1.93.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-native-web": "~0.21.1",
-    "@repo/ui": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
     "vite-plugin-react-native-web": "^2.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9",
+    "@module-federation/vite": "^1.11.0",
     "@tanstack/router-plugin": "^1.93.0",
     "@types/react": "19.2.0",
     "@types/react-dom": "19.2.0",
