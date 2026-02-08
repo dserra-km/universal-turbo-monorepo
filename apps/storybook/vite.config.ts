@@ -1,12 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import { uniwind } from 'uniwind/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      jsxImportSource: 'nativewind',
-      jsxRuntime: 'automatic',
+    react(),
+    tailwindcss(),
+    uniwind({
+      cssEntryFile: './global.css',
     }),
   ],
   resolve: {

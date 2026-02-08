@@ -4,12 +4,11 @@
   "private": true,
   "exports": {
     "./shared-styles.css": "./shared-styles.css",
-    "./preset": "./tailwind-workspace.preset.js"
+    "./postcss": "./postcss.config.js"
   },
   "dependencies": {
-    "nativewind": "^4.1.23",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18"
-  },
-  "devDependencies": {}
+    "tailwindcss": "4.1.5",
+    "uniwind": "^1.3.0"
+  }
 }

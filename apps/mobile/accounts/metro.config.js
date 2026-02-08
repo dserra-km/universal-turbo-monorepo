@@ -1,5 +1,5 @@
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
-const { withNativeWind } = require('nativewind/metro');
+const { withUniwindConfig } = require('uniwind/metro');
 const { withModuleFederation } = require('@module-federation/metro');
 const path = require('path');
 
@@ -17,9 +17,7 @@ const config = {
   ],
 };
 
-const nativeConfig = withNativeWind(mergeConfig(getDefaultConfig(__dirname), config), { input: "./global.css" });
-
-module.exports = withModuleFederation(nativeConfig,
+const federatedConfig = withModuleFederation(mergeConfig(getDefaultConfig(__dirname), config),
   {
     name: 'Accounts',
     filename: 'accounts.bundle',
@@ -41,11 +39,11 @@ module.exports = withModuleFederation(nativeConfig,
         version: '0.83.0',
         import: false,
       },
-      'nativewind': {
+      'uniwind': {
         singleton: true,
         eager: false,
-        requiredVersion: '^4.1.23',
-        version: '4.1.23',
+        requiredVersion: '^1.3.0',
+        version: '1.3.0',
         import: false,
       },
       'react-native-reanimated': {
@@ -73,3 +71,5 @@ module.exports = withModuleFederation(nativeConfig,
     }
   }
 );
+
+module.exports = withUniwindConfig(federatedConfig, { cssEntryFile: "./global.css", dtsFile: "./src/uniwind-types.d.ts" });
